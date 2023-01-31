@@ -1,20 +1,7 @@
 <?php
-    //Controllo della password
-    // if (isset($_GET["num"])) {
-    // echo "<p>Password generata: " . generatePassword($_GET["num"]) . "</p>";
-    // }
-
-    //Funzione che genera la password
-    function generatePassword($num) {
-    $chars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*()_+-=[]{}|;':\"<>,.?/\\";
-    $password = "";
-    for ($i = 0; $i < $num; $i++) {
-        //Inserisco nella variabile $passowrd i caratteri in maniera randomica.
-        $password .= $chars[rand(0, strlen($chars) - 1)];
-    }
-    return $password;
-    }
+include __DIR__. './functions.php';
 ?>
+
 <html>
   <head>
     <title>Generatore di password</title>
@@ -28,7 +15,6 @@
                 <input type="number" name="num">
                 <button type="submit" value="Genera password">Crea Password</button>
                 <h1><?php echo generatePassword($_GET["num"]) ?></h1>
-
             </div>
         </div>
     </form>
